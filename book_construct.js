@@ -21,5 +21,5 @@ function CreateBook(title, author, page_num, was_read) {
 const dune = new CreateBook("Dune", "Frank Herbert", 300, "not read yet");
 
 console.log(dune.info());
-console.log(Object.getPrototypeOf(dune) === createBook.prototype);
+console.log(Object.getPrototypeOf(dune) === CreateBook.prototype);
 console.log(dune.valueOf());
