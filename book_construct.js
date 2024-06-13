@@ -1,4 +1,7 @@
 //Capitalize first letter in Constructor function name
+
+const myLibrary = [];
+
 function CreateBook(title, author, page_num, was_read) {
     this.title = title;
     this.author = author;
@@ -17,6 +20,8 @@ function CreateBook(title, author, page_num, was_read) {
         );
     };
 }
+
+function addBookToLibrary() {}
 
 const dune = new CreateBook("Dune", "Frank Herbert", 300, "not read yet");
 
