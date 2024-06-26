@@ -20,11 +20,26 @@ function CreateBook(title, author, page_num, was_read) {
         );
     };
 }
-
 function addBookToLibrary() {}
 
+const addBookBtn = document.getElementById("add-book");
+const bookDialog = document.getElementById("dialog-book");
+const submitBtn = bookDialog.querySelector("#submit-book");
+const container = document.querySelector("#container");
+
+addBookBtn.addEventListener("click", () => {
+    bookDialog.showModal();
+});
+
+submitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    bookDialog.close();
+});
+
+/* CreateBook test
 const dune = new CreateBook("Dune", "Frank Herbert", 300, "not read yet");
 
 console.log(dune.info());
 console.log(Object.getPrototypeOf(dune) === CreateBook.prototype);
 console.log(dune.valueOf());
+*/
