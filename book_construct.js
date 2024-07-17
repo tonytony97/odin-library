@@ -20,7 +20,10 @@ function CreateBook(title, author, page_num, was_read) {
         );
     };
 }
-function addBookToLibrary() {}
+function addBookToLibrary(title, author, page_num, was_read) {
+    const book = new CreateBook(title, author, page_num, was_read);
+    myLibrary.push(book);
+}
 
 const addBookBtn = document.getElementById("add-book");
 const bookDialog = document.getElementById("dialog-book");
@@ -38,7 +41,7 @@ addBookBtn.addEventListener("click", () => {
     bookDialog.showModal();
 });
 
-bookDialog.addEventListener("close", (e) => {
+bookDialog.addEventListener("submit", (e) => {
     outputBook.value =
         inputBook.value === ""
             ? "No return value."
@@ -55,6 +58,12 @@ bookDialog.addEventListener("close", (e) => {
         inputRead.value === ""
             ? "No return value."
             : `Read?: ${inputRead.checked}.`;
+    addBookToLibrary(
+        inputBook.value,
+        inputAuthor.value,
+        inputPage.value,
+        inputRead.checked,
+    );
     document.getElementById("form-book").reset();
 });
 
