@@ -11,29 +11,29 @@
         <h1>Library</h1>
 
         <dialog id="dialog-book">
-            <form method="dialog">
+            <form method="dialog" id="form-book">
                 <p>
-                    <label id="input-book">
+                    <label>
                         Book Name:
-                        <input type="text" required />
+                        <input type="text" id="input-book" required />
                     </label>
                 </p>
                 <p>
-                    <label id="input-author">
+                    <label>
                         Author:
-                        <input type="text" required />
+                        <input type="text" id="input-author" required />
                     </label>
                 </p>
                 <p>
-                    <label id="input-pages">
-                        Number of pages:
-                        <input type="number" required />
+                    <label>
+                        Number of Pages:
+                        <input type="number" id="input-page" required />
                     </label>
                 </p>
                 <p>
                     <label>
                         Read?
-                        <input type="checkbox" />
+                        <input type="checkbox" id="cb-read" />
                     </label>
                 </p>
                 <div>
@@ -44,7 +44,10 @@
         <p>
             <button id="add-book">Add New Book!</button>
         </p>
-        <output></output>
+        <output id="out-book"></output>
+        <output id="out-author"></output>
+        <output id="out-page"></output>
+        <output id="out-read"></output>
         <div id="bookContainer"></div>
     </body>
 </html>
