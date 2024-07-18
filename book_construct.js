@@ -27,22 +27,26 @@ function addBookToLibrary(title, author, page_num, was_read) {
 }
 
 function showLibrary() {
-    //
     for (const i of myLibrary) {
         bookSpace = document.createElement("p");
+        bookDiv1 = document.createElement("div");
+        bookDiv2 = document.createElement("div");
         bookTitle = document.createTextNode(`Book Name: ${i.title}`);
         bookAuthor = document.createTextNode(`Author: ${i.author}`);
         bookPages = document.createTextNode(`Pages: ${i.page_num}`);
-        bookLabel = document.createTextNode("Read?");
+        bookLabel = document.createElement("label");
+        bookReadText = document.createTextNode("Read?");
         bookRead = document.createElement("input");
         bookRead.setAttribute("type", "checkbox");
         bookRead.checked = i.was_read;
         bookSpace.appendChild(bookTitle);
-        bookSpace.appendChild(div);
-        bookSpace.appendChild(bookAuthor);
-        bookSpace.appendChild(bookPages);
+        bookDiv1.appendChild(bookAuthor);
+        bookSpace.appendChild(bookDiv1);
+        bookDiv2.appendChild(bookPages);
+        bookSpace.appendChild(bookDiv2);
+        bookLabel.appendChild(bookReadText);
+        bookLabel.appendChild(bookRead);
         bookSpace.appendChild(bookLabel);
-        bookSpace.appendChild(bookRead);
     }
     bookViewer.appendChild(bookSpace);
     console.log(bookTitle);
