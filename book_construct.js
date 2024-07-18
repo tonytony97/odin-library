@@ -1,7 +1,6 @@
-//Capitalize first letter in Constructor function name
-
 const myLibrary = [];
 
+//Construct 'Book' object, capitalize first letter of constructor function
 function CreateBook(title, author, page_num, was_read) {
     this.title = title;
     this.author = author;
@@ -21,8 +20,35 @@ function CreateBook(title, author, page_num, was_read) {
     };
 }
 function addBookToLibrary(title, author, page_num, was_read) {
+    //Create new object with input values
     const book = new CreateBook(title, author, page_num, was_read);
+    //Insert object into myLibrary array
     myLibrary.push(book);
+}
+
+function showLibrary() {
+    //
+    for (const i of myLibrary) {
+        bookSpace = document.createElement("p");
+        bookTitle = document.createTextNode(`Book Name: ${i.title}`);
+        bookAuthor = document.createTextNode(`Author: ${i.author}`);
+        bookPages = document.createTextNode(`Pages: ${i.page_num}`);
+        bookLabel = document.createTextNode("Read?");
+        bookRead = document.createElement("input");
+        bookRead.setAttribute("type", "checkbox");
+        bookRead.checked = i.was_read;
+        bookSpace.appendChild(bookTitle);
+        bookSpace.appendChild(div);
+        bookSpace.appendChild(bookAuthor);
+        bookSpace.appendChild(bookPages);
+        bookSpace.appendChild(bookLabel);
+        bookSpace.appendChild(bookRead);
+    }
+    bookViewer.appendChild(bookSpace);
+    console.log(bookTitle);
+    console.log(bookAuthor);
+    console.log(bookPages);
+    console.log(bookRead);
 }
 
 const addBookBtn = document.getElementById("add-book");
@@ -36,6 +62,7 @@ const inputBook = bookDialog.querySelector("#input-book");
 const inputAuthor = bookDialog.querySelector("#input-author");
 const inputPage = bookDialog.querySelector("#input-page");
 const inputRead = bookDialog.querySelector("#cb-read");
+const bookViewer = document.querySelector("#book-container");
 
 addBookBtn.addEventListener("click", () => {
     bookDialog.showModal();
@@ -64,13 +91,22 @@ bookDialog.addEventListener("submit", (e) => {
         inputPage.value,
         inputRead.checked,
     );
+    //Clear form inputs
+    showLibrary();
     document.getElementById("form-book").reset();
 });
 
 submitBtn.addEventListener("submit", (event) => {
+    //Prevent POST of form data
     event.preventDefault();
     console.log();
-    bookDialog.close(inputBook.value, inputAuthor.value);
+    //Close modal and submit inputs
+    bookDialog.close(
+        inputBook.value,
+        inputAuthor.value,
+        inputPage.value,
+        inputRead.checked,
+    );
 });
 
 /* CreateBook test
