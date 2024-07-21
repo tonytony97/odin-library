@@ -9,8 +9,17 @@ body {
 }
 
 h1 {
+    color: rgb(205, 133, 63);
     font-size: 100px;
+    font-weight: bolder;
     margin: 12px;
+}
+
+#dialog-book {
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgb(165, 42, 42);
+    background-color: rgb(255, 218, 185);
 }
 
 #book-container {
@@ -21,14 +30,80 @@ h1 {
 }
 
 #book-container p {
-    background-color: rgb(255, 218, 185);
+    border-style: solid;
+    border-color: rgb(179, 125, 44);
     border-radius: 15px;
+    max-width: 265px;
 
     font-size: x-large;
     padding: 50px;
     line-height: 2.4;
+    transition-duration: 0.4s;
 }
 
-p input {
-    position: relative;
+#book-container p:hover {
+    background-color: rgb(255, 218, 185);
+}
+
+#book-container input {
+    width: 25px;
+    height: 20px;
+}
+
+#submit-book {
+    background-color: rgb(205, 133, 63);
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    border-style: solid;
+    border-color: rgb(160, 87, 5);
+
+    font-size: 20px;
+    font-weight: bold;
+    width: 150px;
+    height: 50px;
+    transform: translate(45%);
+}
+
+#submit-book:active {
+    background-color: rgb(148, 87, 26);
+}
+
+#submit-book:hover {
+    cursor: pointer;
+}
+
+button {
+    background-color: rgb(205, 133, 63);
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    border-style: solid;
+    border-color: rgb(160, 87, 5);
+    cursor: pointer;
+
+    font-size: 20px;
+    font-weight: bold;
+    width: 200px;
+    height: 50px;
+}
+
+button:active {
+    background-color: rgb(148, 87, 26);
+}
+
+#book-container button {
+    background-color: rgb(255, 2, 2);
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    border-style: solid;
+    border-color: rgb(155, 4, 7);
+
+    font-size: 20px;
+    font-weight: bold;
+    width: 180px;
+    height: 50px;
+    align-self: center;
+}
+
+#book-container button:active {
+    background-color: rgba(190, 3, 3, 0.897);
 }
